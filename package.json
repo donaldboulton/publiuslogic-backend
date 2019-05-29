@@ -1,7 +1,7 @@
 {
-  "name": "poc-express-api-heroku",
+  "name": "publiuslogic-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "publiuslogic-backend for feedback",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abusedmedia/poc-express-api-heroku.git"
+    "url": "git@github.com:donaldboulton/publiuslogic-backend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/abusedmedia/poc-express-api-heroku/issues"
+    "url": "https://github.com/donaldboulton/publiuslogic-backend/issues"
   },
-  "homepage": "https://github.com/abusedmedia/poc-express-api-heroku#readme",
+  "homepage": "https://github.com/donaldboulton/publiuslogic-backend#readme",
   "dependencies": {
-    "cors": "^2.8.4",
-    "express": "^4.16.3"
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }
