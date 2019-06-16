@@ -1,7 +1,7 @@
 {
   "name": "publiuslogic-backend",
   "version": "1.0.0",
-  "description": "publiuslogic-backend for feedback",
+  "description": "publiuslogic-backend for notifications and feedback",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/donaldboulton/publiuslogic-backend#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "web-push": "^3.3.5"
   }
 }
