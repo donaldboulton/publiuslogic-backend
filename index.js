@@ -5,9 +5,28 @@ const webpush = require('web-push')
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-app.set('port', (process.env.PORT || 5000))
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
 
-app.use(express.static(__dirname + '/public'))
+const port = process.env.PORT || 8080;
+
+const jwtCheck = jwt({
+      secret: jwks.expressJwtSecret({
+          cache: true,
+          rateLimit: true,
+          jwksRequestsPerMinute: 5,
+          jwksUri: 'https://mansbooks.auth0.com/.well-known/jwks.json'
+    }),
+    audience: 'https://publiuslogic.com/',
+    issuer: 'https://mansbooks.auth0.com/',
+    algorithms: ['RS256']
+});
+
+app.use(jwtCheck);
+
+app.get('/authorized', function (req, res) {
+    res.send('Secured Resource');
+});
 
 app.get('/', (req, res) => res.send('Hello World!'))
 const dummyDb = { subscription: null } //dummy in memory store
@@ -45,4 +64,5 @@ app.get('/send-notification', (req, res) => {
   sendNotification(subscription, message)
   res.json({ message: 'message sent' })
 })
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port);

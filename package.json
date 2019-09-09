@@ -1,6 +1,6 @@
 {
   "name": "publiuslogic-backend",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "publiuslogic-backend for notifications and feedback",
   "main": "index.js",
   "scripts": {
