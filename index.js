@@ -59,7 +59,7 @@ const sendNotification = (subscription, dataToSend) => {
 }
 //route to test send notification
 app.get('/send-notification', (req, res) => {
-  const subscription = dummyDb.subscription //get subscription from your databse here.
+  const subscription = dummyDb.subscription //get subscription from your database here.
   const message = 'Hello World'
   sendNotification(subscription, message)
   res.json({ message: 'message sent' })
