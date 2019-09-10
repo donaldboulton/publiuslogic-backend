@@ -28,12 +28,12 @@ app.get('/authorized', function (req, res) {
     res.send('Secured Resource');
 });
 
-app.get('/', (req, res) => res.send('Hello World!'))
-const dummyDb = { subscription: null } //dummy in memory store
+app.get('https://gatsbytestgraphql.herokuapp.com/v1/graphql', (req, res) => res.send('Hello World!'))
+const gatsbytestgraphql = { subscription: null } //dummy in memory store
 const saveToDatabase = async subscription => {
   // Since this is a demo app, I am going to save this in a dummy in memory store. Do not do this in your apps.
   // Here you should be writing your db logic to save it.
-  dummyDb.subscription = subscription
+  gatsbytestgraphql.subscription = subscription
 }
 // The new /save-subscription endpoint
 app.post('/save-subscription', async (req, res) => {

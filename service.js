@@ -11,7 +11,7 @@ const urlB64ToUint8Array = base64String => {
   return outputArray
 }
 const saveSubscription = async subscription => {
-  const SERVER_URL = 'http://localhost:4000/save-subscription'
+  const SERVER_URL = 'https://gatsbytestgraphql.herokuapp.com/v1/graphql/save-subscription'
   const response = await fetch(SERVER_URL, {
     method: 'post',
     headers: {
